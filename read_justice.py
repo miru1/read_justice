@@ -11,6 +11,7 @@ url = "https://or.justice.cz/ias/ui/rejstrik-$firma?jenPlatne=PLATNE&polozek=50&
 # ico = "03308235"
 output_file = codecs.open("testfile1.txt", "w", "utf-8")
 in_file = open("svjk.txt", "r")
+m_c = []
 
 for ico in in_file.readlines():
     # get search page
@@ -36,7 +37,8 @@ for ico in in_file.readlines():
     table_row_divs = company.find_all("div", class_="vr-child")
 
     i = 0
-    m_c = ["", "", "", "", "", "", ""]
+    del m_c
+    m_c = []
     m_pov = ""
     for table_row_div in table_row_divs:
         try:
@@ -68,6 +70,7 @@ for ico in in_file.readlines():
         except AttributeError:
             # print "Something missing", table_row_div
             pass
-    rad = m_ic + ";" + m_sz + ";" + m_naz + ";" + m_dv + ";" + m_sidlo + ";" + m_sidlo + m_pred + ";" + m_mipred + ";" + m_pov + ";" + m_c[1] + ";" + m_c[2] + ";" + m_c[3] + ";" + m_c[4] + ";" + "\n"
+        for
+    rad = m_ic + ";" + m_sz + ";" + m_naz + ";" + m_dv + ";" + m_sidlo + ";" + m_pred + ";" + m_mipred + ";" + m_pov + ";" + m_c[1] + ";" + m_c[2] + ";" + m_c[3] + ";" + m_c[4] + ";kon;" + "\n"
     output_file.write(rad)
 output_file.close()
